@@ -8,6 +8,7 @@
 }
 body {
     background-color: rgb(44, 44, 44);
+    /*min-height ou height normal*/
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -61,6 +62,11 @@ body::after {
 .container .card .content {
     color: #fff;
     text-align: center;
+    transform: translateY(400px);
+    transition: 1s;
+}
+.container .card:hover .content {
+    transform: translateY(0px);
 }
 .container .card .content h2 {
     position: absolute;
@@ -91,7 +97,7 @@ body::after {
     box-shadow: 0 5px 15px rgba(255, 255, 255, .2);
 }
 
-@media only screen and (max-width:1019px ) {
+@media only screen and (max-width:1019px) {
     body::before {
         content: '';
         position: absolute;
@@ -112,7 +118,15 @@ body::after {
     }
 }
 
-@media only screen and (max-width:679px ) {
+@media only screen and (max-width:900px) {
+    .container .card .content {
+        color: #fff;
+        text-align: center;
+        transform: translateY(0px);
+    }
+}
+
+@media only screen and (max-width:679px) {
     body::before {
         content: '';
         position: absolute;
