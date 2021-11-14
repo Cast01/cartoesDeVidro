@@ -55,14 +55,18 @@ body::after {
     display: flex;
     align-items: center;
 }
+.card:hover .content {
+    transform: translateY(0px);
+}
 .content {
-    /* position: relative; */
     text-align: center;
     color: #fff;
+    transform: translateY(400px);
+    transition: .5s;
 }
 .content h2 {
     position: absolute;
-    top: 0;
+    top: -80px;
     right: 0;
     font-size: 8em;
     color: rgba(255, 255, 255, .2);
