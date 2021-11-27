@@ -9,10 +9,10 @@
 }
 body {
     min-height: 100vh;
-    background-color: rgb(30, 30, 30);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background-color: rgb(40, 40, 40);
 }
 body::before {
     content: '';
@@ -21,8 +21,8 @@ body::before {
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(to right, rgb(255, 121, 143), rgb(134, 0, 105));
-    clip-path: circle(70% at 90% 100%);
+    background: linear-gradient(to right, #f00, rgb(255, 64, 230));
+    clip-path: circle(70% at 90% 90%);
 }
 body::after {
     content: '';
@@ -31,73 +31,61 @@ body::after {
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(to right, rgb(130, 121, 255), rgb(38, 0, 255));
+    background: linear-gradient(to right, rgb(109, 112, 255), rgb(255, 0, 221));
     clip-path: circle(30% at 10% 10%);
     z-index: -1;
 }
 .container {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
+    padding: 30px 0;
 }
 .card {
+    position: relative;
     width: 300px;
-    min-width: 200px;
     height: 400px;
-    background-color: rgba(255, 255, 255, .1);
-    border-top: 1px solid rgba(255, 255, 255, .4);
-    border-left: 1px solid rgba(255, 255, 255, .4);
     margin: 30px;
-    border-radius: 20px;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 25px;
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    border-left: 1px solid rgba(255, 255, 255, .3);
     overflow: hidden;
+    box-shadow: 0 0 40px rgba(47, 0, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     backdrop-filter: blur(5px);
-    box-shadow: 0 0 40px rgba(255, 0, 76, 0.74);
 }
 .card:hover .content {
     transform: translateY(0);
-    transition: .5s;
 }
-.card .content {
-    height: 100%;
+.content {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     color: #fff;
-    transform: translateY(100%);
+    transform: translateY(150%);
     transition: 1s;
 }
-.card .content h2 {
+.content h2 {
     position: absolute;
-    top: 0;
+    top: -70px;
     right: 0;
-    font-size: 8em;
-    color: rgba(255, 255, 255, .08);
+    font-size: 7em;
+    color: rgba(255, 255, 255, .3);
+    pointer-events: none;
 }
-.card .content h3 {
+.content h3 {
     font-size: 2.2em;
-    position: relative;
-    top: 25px;
 }
-.card .content p {
-    padding: 0 10px;
+.content p {
+    margin: 15px 0 70px;
+    padding: 10px;
 }
-.card .content a {
+.content a {
     text-decoration: none;
     background-color: #fff;
     color: #000;
-    width: fit-content;
-    margin-left: 50%;
-    transform: translateX(-50%);
     padding: 5px 25px;
     border-radius: 15px;
-    white-space: nowrap;
-}
-
-@media only screen and (max-width:360px) {
-    .card {
-        width: 85%;
-        margin: 30px 0;
-    }
 }
